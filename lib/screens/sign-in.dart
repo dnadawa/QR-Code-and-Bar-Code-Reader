@@ -74,37 +74,27 @@ class SignIn extends StatelessWidget {
     }
   }
 
-  signInWithFacebook() async {
+  signInWithFacebook(BuildContext context) async {
     try{
       final facebookLogin = FacebookLogin();
-
-      final result = await facebookLogin.logIn(['email','read']);
+      //facebookLogin.loginBehavior = FacebookLoginBehavior.webViewOnly;
+      final result = await facebookLogin.logIn(['email']);
       final token = result.accessToken.token;
       final graphResponse = await http.get(
           'https://graph.facebook.com/v2.12/me?fields=name,first_name,last_name,email&access_token=$token');
       final profile = jsonDecode(graphResponse.body);
-      print(profile);
+      SharedPreferences prefs = await SharedPreferences.getInstance();
+      prefs.setString('email', profile['email']);
+      prefs.setString('username', profile['name']);
+      print(profile['email']);
+      print(profile['name']);
+
+      Navigator.pushReplacement(context, CupertinoPageRoute(builder: (context){
+        return Home();}));
     }
     catch(E){
       print(E);
     }
-
-//    final facebookLogin = FacebookLogin();
-//    final FacebookLoginResult result = await facebookLogin.logIn(['email','read']);
-//
-//    switch (result.status) {
-//      case FacebookLoginStatus.loggedIn:
-//        final FacebookAccessToken accessToken = result.accessToken;
-//        print(accessToken.userId);
-//        break;
-//      case FacebookLoginStatus.cancelledByUser:
-//        print('Login cancelled by the user.');
-//        break;
-//      case FacebookLoginStatus.error:
-//        print('Something went wrong with the login process.\n'
-//            'Here\'s the error Facebook gave us: ${result.errorMessage}');
-//        break;
-//    }
   }
 
 
@@ -133,7 +123,7 @@ class SignIn extends StatelessWidget {
               ),
               Padding(
                 padding: const EdgeInsets.only(top: 20),
-                child: Button(text: 'Sign in with Facebook',color: Colors.white,social: true,icon: FontAwesomeIcons.facebook,onclick: ()=>signInWithFacebook(),),
+                child: Button(text: 'Sign in with Facebook',color: Colors.white,social: true,icon: FontAwesomeIcons.facebook,onclick: ()=>signInWithFacebook(context),),
               ),
               Padding(
                 padding: const EdgeInsets.only(top: 10),
