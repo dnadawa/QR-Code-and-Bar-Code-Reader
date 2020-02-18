@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "120066202329",
+    "firebase_url": "https://snappgo-a1a3e.firebaseio.com",
+    "project_id": "snappgo-a1a3e",
+    "storage_bucket": "snappgo-a1a3e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:120066202329:android:98d773fb5f84191979fcc8",
+        "android_client_info": {
+          "package_name": "com.digiwrecks.snappgo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "120066202329-v0o9vctu57p1138t7a1dhbauccu1t0k5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAv7ebdyKkFFzsUHYwGTzJPwd5yyTcE9Ik"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "120066202329-v0o9vctu57p1138t7a1dhbauccu1t0k5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

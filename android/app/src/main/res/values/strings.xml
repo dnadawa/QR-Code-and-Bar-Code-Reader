@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">SnappGo</string>
+    <string name="facebook_app_id">638240540326410</string>
+    <string name="fb_login_protocol_scheme">fb638240540326410</string>
+
+</resources>
