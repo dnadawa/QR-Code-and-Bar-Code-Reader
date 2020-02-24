@@ -39,7 +39,7 @@ class _AddProductState extends State<AddProduct> {
 
   submitData(BuildContext context) async {
       try{
-        await collectionReference.document(widget.id).setData({
+        await collectionReference.add({
           'id': widget.id,
           'title': title.text,
           'description': desc.text,
@@ -72,6 +72,7 @@ class _AddProductState extends State<AddProduct> {
         );
       }
       catch(E){
+        print(E);
         ToastBar(text: 'Something Went Wrong',color: Colors.red).show();
       }
   }

@@ -70,8 +70,20 @@ class Home extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: <Widget>[
             Text('Welcome',style: GoogleFonts.dosis(fontSize: 66,color: Colors.white),),
+
+            SizedBox(height: 20,),
+            Container(
+              width: 185,
+              height: 185,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(40),
+                color: Colors.white,
+                image: DecorationImage(image: AssetImage('images/logo.png'),)
+              ),
+            ),
+
             Padding(
-              padding: const EdgeInsets.fromLTRB(20,50,20,20),
+              padding: const EdgeInsets.fromLTRB(20,30,20,20),
               child: Text('Press “Scan” Button To Scan The Code',style:  TextStyle(fontSize: 32,color: Colors.white),textAlign: TextAlign.center,),
             ),
             Padding(

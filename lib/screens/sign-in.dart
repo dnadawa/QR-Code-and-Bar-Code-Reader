@@ -1,5 +1,4 @@
 import 'dart:convert';
-
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
@@ -14,7 +13,6 @@ import 'package:snappgo/widgets/white-text.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:flutter_facebook_login/flutter_facebook_login.dart';
 import 'package:http/http.dart' as http;
-
 import 'home.dart';
 
 class SignIn extends StatelessWidget {
@@ -105,7 +103,7 @@ class SignIn extends StatelessWidget {
       resizeToAvoidBottomInset: false,
       body: Container(
         decoration: BoxDecoration(
-            image: DecorationImage(image: AssetImage('images/signback.png'),fit: BoxFit.cover)
+            image: DecorationImage(image: AssetImage('images/homeback.jpg'),fit: BoxFit.fitHeight)
         ),
         child: Padding(
           padding: const EdgeInsets.fromLTRB(50,200,40,40),
@@ -116,7 +114,7 @@ class SignIn extends StatelessWidget {
               InputField(hint: 'Email',type: TextInputType.emailAddress,ispassword: false,controller: email,),
               InputField(hint: 'Password',ispassword:true,controller: password,),
               Padding(
-                padding: const EdgeInsets.only(top: 70),
+                padding: const EdgeInsets.only(top: 30),
                 child: Button(onclick: ()=>signInWithEmail(context),
                   text: 'Log in',
                 ),

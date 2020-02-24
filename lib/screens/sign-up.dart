@@ -49,7 +49,7 @@ class SignUp extends StatelessWidget {
       resizeToAvoidBottomInset: false,
       body: Container(
         decoration: BoxDecoration(
-            image: DecorationImage(image: AssetImage('images/signback.png'),fit: BoxFit.cover)
+            image: DecorationImage(image: AssetImage('images/homeback.jpg'),fit: BoxFit.fitHeight)
         ),
         child: Padding(
           padding: const EdgeInsets.fromLTRB(50,0,40,0),
