@@ -191,7 +191,7 @@ class _ProductsState extends State<Products> {
 
                     GestureDetector(
                       onTap: (){
-                        Share.share('https://play.google.com/store/apps/details?id=com.digiwrecks.snappgo');
+                        Share.share('https://play.google.com/store/apps/details?id=com.digiwrecks.snappgo ');
                       },
                       child: CircleAvatar(
                         backgroundColor: Colors.white,
